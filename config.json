@@ -1,0 +1,32 @@
+{
+  "quizBot": {
+    "settings": {
+      "name": "QuizBot",
+      "language": "en",
+      "maxQuestions": 10,
+      "timeLimit": 30,
+      "difficulty": "medium"
+    },
+    "categories": [
+      "General Knowledge",
+      "Science",
+      "History",
+      "Geography",
+      "Entertainment",
+      "Sports"
+    ],
+    "questionTypes": [
+      "multipleChoice",
+      "trueFalse",
+      "shortAnswer"
+    ],
+    "messages": {
+      "welcome": "Welcome to the Quiz! Type /start to begin.",
+      "correct": "Correct! Well done.",
+      "incorrect": "Incorrect. Better luck next time.",
+      "timeUp": "Time's up! The correct answer was {answer}.",
+      "quizEnd": "Quiz over! You scored {score}/{total}.",
+      "error": "An error occurred. Please try again."
+    }
+  }
+}
