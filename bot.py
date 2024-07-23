@@ -32,7 +32,7 @@ def main() -> None:
     # Make sure to replace 'YOUR_TOKEN_HERE' with your actual token
     with open('config.json', 'r') as f:
         config = json.load(f)
-    token = config.get('token', '7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs')
+    token = config.get('token', 'YOUR_TOKEN_HERE')
     updater = Updater(token)
 
     # Get the dispatcher to register handlers
