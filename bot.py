@@ -1,6 +1,6 @@
 import json
 import logging
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
 # Load configuration
@@ -9,7 +9,8 @@ with open('config.json', 'r') as f:
 
 # Enable logging
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
 )
 logger = logging.getLogger(__name__)
 
@@ -20,12 +21,19 @@ def start(update: Update, context: CallbackContext) -> None:
 # Define the error handler
 def error(update: Update, context: CallbackContext) -> None:
     logger.warning('Update "%s" caused error "%s"', update, context.error)
-    update.message.reply_text(config['quizBot']['messages']['error'])
+    if update.message:
+        update.message.reply_text(config['quizBot']['messages']['error'])
+    else:
+        logger.error('No message found in update.')
 
 # Main function to start the bot
 def main() -> None:
     # Create the Updater and pass it your bot's token
-    updater = Updater("7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs" )
+    # Make sure to replace 'YOUR_TOKEN_HERE' with your actual token
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    token = config.get('token', '7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs')
+    updater = Updater(token)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
