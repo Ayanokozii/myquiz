@@ -1,4 +1,4 @@
-import config
+import json
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
@@ -25,7 +25,7 @@ def error(update: Update, context: CallbackContext) -> None:
 # Main function to start the bot
 def main() -> None:
     # Create the Updater and pass it your bot's token
-    updater = Updater("7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs")
+    updater = Updater("7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs", use_context=True)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
