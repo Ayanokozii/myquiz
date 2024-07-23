@@ -25,7 +25,7 @@ def error(update: Update, context: CallbackContext) -> None:
 # Main function to start the bot
 def main() -> None:
     # Create the Updater and pass it your bot's token
-    updater = Updater("7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs", use_context=True)
+    updater = Updater("7332008423:AAFExbt7RhYJZ9IhR8lFQ4IQZVYvXYiIkYs" )
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
